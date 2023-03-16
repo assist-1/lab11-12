@@ -28,7 +28,6 @@ int main(){
     std::cout << std::endl;
 
     input_file.close();
-    output_file.clear();
     output_file.close();
     return 0;
 }
