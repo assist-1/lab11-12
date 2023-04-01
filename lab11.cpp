@@ -11,7 +11,7 @@ int main() {
     }
 
     std::cout << "Numbers in reverse order:" << std::endl;
-    for (auto it = numbers.rbegin(); it != numbers.rend(); ++it) {
+    for (std::vector<int>::reverse_iterator it = numbers.rbegin(); it != numbers.rend(); ++it) {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
