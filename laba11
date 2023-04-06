@@ -1,0 +1,48 @@
+#include <iostream>
+#include <list>
+#include<iterator>
+
+int main() {
+    std::list<int> A;
+    int n;
+    std::cout << "Введите количество элементов вектора: ";
+    std::cin >> n;
+    std::cout << "Введите элементы вектора: ";
+    for (int i = 0; i < n; i++) {
+        int a;
+        std::cin >> a;
+        A.push_back(a);
+    }
+    std::cout << "Введите количество элементов, которые хотите добавить справа: ";
+    std::cin >> n;
+    std::cout << "Введите элементы: ";
+    for (int i = 0; i < n; i++) {
+        int res;
+        std::cin >> res;
+        std::back_inserter(A) = res;
+    }
+    std::cout << "Введите количество элементов, которые хотите добавить слева: ";
+    std::cin >> n;
+    std::cout << "Введите элементы: ";
+    for (int i = 0; i < n; i++) {
+        int res;
+        std::cin >> res;
+        std::front_inserter(A) = res;
+    }
+    std::list<int>::iterator iter = A.begin();
+    std::cout << "Введите количество элементов, которые хотите добавить с какой-то позиции: ";
+    std::cin >> n;
+    std::cout << "Введите элемент и позицию: ";
+    for (int i = 0; i < n; i++) {
+        int res, pos;
+        std::cin >> res;
+        std::cin >> pos;
+        std::advance(iter, pos);
+        std::inserter(A, iter) = res;
+    }
+
+    for (auto it = A.begin(); it != A.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    return 0;
+}
